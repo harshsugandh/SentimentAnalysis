@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import {Form} from 'react-bootstrap'
 
 export class BlankPage extends Component {
-
-
   render() {
     return (
       <div className="card">
