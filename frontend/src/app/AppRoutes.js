@@ -25,6 +25,8 @@ const Login = lazy(() => import('./user-pages/Login'));
 const Register1 = lazy(() => import('./user-pages/Register'));
 
 const BlankPage = lazy(() => import('./user-pages/BlankPage'));
+const Result = lazy(() => import('./user-pages/Result'));
+const WordCloud = lazy(() => import('./user-pages/WordCloud'));
 
 
 class AppRoutes extends Component {
@@ -54,6 +56,8 @@ class AppRoutes extends Component {
           <Route path="/user-pages/error-500" component={ Error500 } />
 
           <Route path="/user-pages/blank-page" component={ BlankPage } />
+          <Route path="/user-pages/result" component={ Result } />
+          <Route path="/user-pages/word-cloud" component={ WordCloud } />
 
 
           <Redirect to="/dashboard" />
