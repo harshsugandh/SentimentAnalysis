@@ -16,7 +16,8 @@ import argparse
 import lxml.html
 import requests
 from lxml.cssselect import CSSSelector
-
+import charts
+import seaborn as sns
 app = Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb'))
 vect = pickle.load(open('vect.pkl', 'rb'))
@@ -41,6 +42,15 @@ def wordcloud():
     print('wordcloud saved')
     return "Image craeted"
 
+@app.route('/plots', methods=['POST'])
+def plots():
+    data = pd.read_csv("./comment.csv")
+    data.head()
+
+    ax = sns.countplot(x="sentiment", data=data)
+    plt.savefig('C:/Users/Harsh Sugandh/Desktop/SentimentAnalysis/backend/sentiment_barplot.jpg')
+    plt.savefig('C:/Users/Harsh Sugandh/Desktop/SentimentAnalysis/frontend/src/assets/images/sentiment_barplot.jpg')
+    return "Image craeted"
 @app.route('/predict',methods=['POST'])
 def predict():
     '''

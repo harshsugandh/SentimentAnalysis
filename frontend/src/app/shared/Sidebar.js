@@ -178,6 +178,11 @@ class Sidebar extends Component {
               <span className="menu-title">Word Cloud</span>
             </Link>
           </li>
+          <li className={ this.isPathActive('/user-pages/plots') ? 'nav-item active' : 'nav-item' }>
+            <Link className="nav-link" to="/user-pages/plots">
+              <span className="menu-title">Plots</span>
+            </Link>
+          </li>
         </ul>
       </nav>
     );

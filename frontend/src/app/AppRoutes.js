@@ -27,7 +27,7 @@ const Register1 = lazy(() => import('./user-pages/Register'));
 const BlankPage = lazy(() => import('./user-pages/BlankPage'));
 const Result = lazy(() => import('./user-pages/Result'));
 const WordCloud = lazy(() => import('./user-pages/WordCloud'));
-
+const Plot = lazy(() => import('./user-pages/Plot'))
 
 class AppRoutes extends Component {
   render () {
@@ -58,7 +58,8 @@ class AppRoutes extends Component {
           <Route path="/user-pages/blank-page" component={ BlankPage } />
           <Route path="/user-pages/result" component={ Result } />
           <Route path="/user-pages/word-cloud" component={ WordCloud } />
-
+          <Route path="/user-pages/plots" component={ Plot } />
+          
 
           <Redirect to="/dashboard" />
         </Switch>
